@@ -10,6 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script src="diploma-stuff/resources/js/main.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="diploma-stuff/resources/css/style.css">
     </head>
     <body>
         <h1>This is index page!</h1>

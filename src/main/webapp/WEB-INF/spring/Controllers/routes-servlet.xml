@@ -12,8 +12,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 <!-- Scans within the base package of the application for @Components to configure as beans -->
 <!-- @Controller, @Service, @Configuration, etc. -->
+<mvc:resources mapping="/resources/**" location="/resources/" />
 <context:component-scan base-package="mainpackage" />
-
 <!-- Enables the Spring MVC @Controller programming model -->
 <mvc:annotation-driven/>
 </beans>
