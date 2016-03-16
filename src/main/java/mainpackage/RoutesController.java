@@ -4,28 +4,47 @@
  * and open the template in the editor.
  */
 package mainpackage;
-import com.googlecode.vkapi.Main;
+
 import com.googlecode.vkapi.exceptions.VkException;
+import dbpackage.City;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import service.CityService;
 
 @Controller
+@RequestMapping("/")
 public class RoutesController {
+
+
 
 	@RequestMapping(value = "/")
 	public String index() {
-            return "WEB-INF/views/index.jsp";
+            return "index";
 	}
         @RequestMapping(value = "/home")
 	public String home() throws InterruptedException, VkException {
 //            Main.execute();
-            return "WEB-INF/views/home.jsp";
+            return "home";
 	}
         @RequestMapping(value = "/*")
         public String one(Model model) {
             model.addAttribute("ErrorCode", "404");
-            return "WEB-INF/views/404.jsp";
+            return "404";
         }
+
+
+    @Autowired
+    private CityService cityService;
+
+
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    public String insert(){
+        cityService.insert(new City("Rostov", 456));
+
+        City ne = cityService.find(213);
+        return "home";
+    }
 }
