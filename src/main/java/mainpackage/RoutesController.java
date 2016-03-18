@@ -10,6 +10,8 @@ import dbpackage.City;
 import dbpackage.Company;
 import dbpackage.Student;
 import dbpackage.University;
+import org.apache.http.ParseException;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +21,9 @@ import service.CityService;
 import service.CompanyService;
 import service.StudentService;
 import service.UniversityService;
+import university.Servlet;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +48,12 @@ public class RoutesController {
             return "404";
         }
 
+    @RequestMapping(value = "/univ")
+    public String univ(Model model) throws IOException, org.json.simple.parser.ParseException {
+        JSONObject json = new Servlet().getResult();
+        model.addAttribute("json", json);
+        return "univ";
+    }
 
     @Autowired
     private CityService cityService;
