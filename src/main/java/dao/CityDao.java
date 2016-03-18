@@ -8,5 +8,5 @@ import dbpackage.City;
 public interface CityDao {
 
     void insert(City city);
-    City find(int id);
+    City find(long id);
 }

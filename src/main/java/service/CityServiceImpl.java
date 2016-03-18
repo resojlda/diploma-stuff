@@ -23,7 +23,7 @@ public class CityServiceImpl implements CityService {
 
     @Override
     @Transactional
-    public City find(int id) {
+    public City find(long id) {
         return cityDao.find(id);
     }
 

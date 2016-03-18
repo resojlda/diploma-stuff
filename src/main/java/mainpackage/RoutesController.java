@@ -7,12 +7,21 @@ package mainpackage;
 
 import com.googlecode.vkapi.exceptions.VkException;
 import dbpackage.City;
+import dbpackage.Company;
+import dbpackage.Student;
+import dbpackage.University;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import service.CityService;
+import service.CompanyService;
+import service.StudentService;
+import service.UniversityService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -38,13 +47,40 @@ public class RoutesController {
 
     @Autowired
     private CityService cityService;
+    @Autowired
+    private StudentService studentService;
+    @Autowired
+    private UniversityService universityService;
+    @Autowired
+    private CompanyService companyService;
+
+
 
 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public String insert(){
         cityService.insert(new City("Rostov", 456));
+        cityService.insert(new City("Odessa", 74));
+        cityService.insert(new City("Rostov", 6));
+        cityService.insert(new City("Piter", 12));
+        cityService.insert(new City("Mosk", 479));
+        cityService.insert(new City("Rovno", 58679));
 
-        City ne = cityService.find(213);
-        return "home";
+
+        City ne = cityService.find(6);
+
+        studentService.insert(new Student(1, 132, "Alexandra", "Marysheva", 46, "https://pp.vk.me/c628825/v628825035/17e2e/qy05rKxrO8E.jpg", "somejson", "some other json"));
+        studentService.insert(new Student(1, 45621, "Kate", "Prihodko", 78, "https://pp.vk.me/c628825/v628825035/17e2e/qy05rKxrO8E.jpg", "somejson", "some other json"));
+
+        List<Student> results=new ArrayList<Student>();
+        results = (List<Student>)(Object)studentService.findUniversityResults(1);
+
+        universityService.insert(new University(54645, "ONPU"));
+        University un = universityService.getName((long)54645);
+
+        companyService.insert(new Company(489654, "Hys"));
+        boolean please=companyService.find("Hys");
+
+        return "welldone";
     }
 }

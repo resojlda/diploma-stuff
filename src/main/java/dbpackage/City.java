@@ -13,13 +13,13 @@ public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
 
-    private int vk_id;
+    private long vk_id;
     private String title;
 
-    public City(String title, int vk_id) {
+    public City(String title, long vk_id) {
         this.title = title;
         this.vk_id = vk_id;
     }
@@ -35,7 +35,7 @@ public class City {
         this.title = title;
     }
 
-    public int getVk_id() {
+    public long getVk_id() {
         return vk_id;
     }
 
@@ -43,7 +43,7 @@ public class City {
         this.vk_id = vk_id;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

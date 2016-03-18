@@ -33,7 +33,7 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
             </props>
         </property>
     </bean>
@@ -47,6 +47,16 @@
 
     <bean id="cityDao" class="dao.CityDaoImpl"/>
     <bean id="cityService" class="service.CityServiceImpl"/>
+
+
+    <bean id="studentDao" class="dao.StudentDaoImpl"/>
+    <bean id="studentService" class="service.StudentServiceImpl"/>
+
+    <bean id="universityDao" class="dao.UniversityDaoImpl"/>
+    <bean id="universityService" class="service.UniversityServiceImpl"/>
+
+    <bean id="companyDao" class="dao.CompanyDaoImpl"/>
+    <bean id="companyService" class="service.CompanyServiceImpl"/>
 
 
 </beans>
