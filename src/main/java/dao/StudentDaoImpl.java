@@ -16,8 +16,6 @@ public class StudentDaoImpl implements StudentDao {
     private SessionFactory sessionFactory;
 
 
-
-
     @Override
     public void insert(Student student) {
         sessionFactory.getCurrentSession().saveOrUpdate(student);
@@ -26,6 +24,6 @@ public class StudentDaoImpl implements StudentDao {
     @Override
     public List findUniversityResults(int id) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Student.class);
-        return criteria.add(Restrictions.eq("university_id", 213)).list();
+        return criteria.add(Restrictions.eq("university_id", id)).list();
     }
 }
