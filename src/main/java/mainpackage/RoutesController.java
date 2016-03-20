@@ -72,8 +72,8 @@ public class RoutesController {
         studentService.insert(new Student(1, 132, "Alexandra", "Marysheva", 46, "https://pp.vk.me/c628825/v628825035/17e2e/qy05rKxrO8E.jpg", "somejson", "some other json"));
         studentService.insert(new Student(1, 45621, "Kate", "Prihodko", 78, "https://pp.vk.me/c628825/v628825035/17e2e/qy05rKxrO8E.jpg", "somejson", "some other json"));
 
-        List results=new ArrayList<Student>();
-        results = studentService.findUniversityResults(1);
+        List<Student> results=new ArrayList<Student>();
+        results = (List<Student>)(Object)studentService.findUniversityResults(1);
 
         universityService.insert(new University(54645, "ONPU"));
         University un = universityService.getName((long)54645);
