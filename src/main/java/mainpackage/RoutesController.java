@@ -42,6 +42,7 @@ public class RoutesController {
 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public String insert(){
+
         cityService.insert(new City("Rostov", 456));
 
         City ne = cityService.find(213);

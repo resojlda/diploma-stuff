@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.googlecode.vkapi.domain.user.VkCareer;
-import com.googlecode.vkapi.domain.user.VkUserSearch;
+import com.googlecode.vkapi.domain.user.*;
 import org.apache.commons.lang3.Validate;
 import org.codehaus.jackson.JsonNode;
 
@@ -14,8 +13,6 @@ import com.googlecode.vkapi.domain.error.VkMethodParam;
 import com.googlecode.vkapi.domain.group.VkGroup;
 import com.googlecode.vkapi.domain.group.VkGroupBuilder;
 import com.googlecode.vkapi.domain.message.*;
-import com.googlecode.vkapi.domain.user.VkUser;
-import com.googlecode.vkapi.domain.user.VkUserBuilder;
 
 /**
  * Utility class for converting from {@link JsonNode} instances to vk.com domain
@@ -57,17 +54,45 @@ final class Convert {
 
         int vkUserId, groupId, country, city, from, until;
         String firstName, lastName, company, position;
+        int id_university, faculty, chair, graduation, uCountry, uCity;
+        String name;
+        String faculty_name;
+        String education_form;
+        String education_status;
+        String chair_name;
         List<VkCareer> vkCareer;
+        List<VkUniversity> vkUniversity;
 
         JsonNode jsonNode = node.get("career");
+        JsonNode jsonNode1 = node.get("universities");
 
-        if (node.get("career") != null && node.get("career").size() > 0) {
+        if (node.get("career") != null && node.get("career").size() > 0 && node.get("universities") != null && node.get("universities").size() > 0) {
             vkUserId = node.findValue("uid").getValueAsInt();
             firstName = node.findValue("first_name").getValueAsText();
             lastName = node.findValue("last_name").getValueAsText();
 
             Iterator<JsonNode> elements = jsonNode.iterator();
             vkCareer = new ArrayList<>();
+
+            Iterator<JsonNode> elements1 = jsonNode1.iterator();
+            vkUniversity = new ArrayList<>();
+
+            while (elements1.hasNext()) {
+                JsonNode element = elements1.next();
+
+                id_university = element.get("id") != null ? element.get("id").getValueAsInt() : -1;
+                faculty = element.get("faculty") != null ? element.get("faculty").getValueAsInt() : -1;
+                uCountry = element.get("country") != null ? element.get("country").getValueAsInt() : -1;
+                uCity = element.get("city") != null ? element.get("city").getValueAsInt() : -1;
+                name = element.get("name") != null ? element.get("name").getValueAsText() : null;
+                faculty_name = element.get("faculty_name") != null ? element.get("faculty_name").getValueAsText() : null;
+                chair = element.get("chair") != null ? element.get("chair").getValueAsInt() : -1;
+                chair_name = element.get("chair_name") != null ? element.get("chair_name").getValueAsText() : null;
+                graduation = element.get("graduation") != null ? element.get("graduation").getValueAsInt() : -1;
+                education_form = element.get("education_form") != null ? element.get("education_form").getValueAsText() : null;
+                education_status = element.get("education_status") != null ? element.get("education_status").getValueAsText() : null;
+                vkUniversity.add(new VkUniversity(id_university, uCountry, uCity, name, faculty, faculty_name, education_form, education_status, chair, chair_name, graduation));
+            }
 
             while (elements.hasNext()) {
                 JsonNode element = elements.next();
@@ -82,7 +107,8 @@ final class Convert {
 
                 vkCareer.add(new VkCareer(groupId, company, country, city, from, until, position));
             }
-            return new VkUserSearch(vkUserId, firstName, lastName, vkCareer);
+
+            return new VkUserSearch(vkUserId, firstName, lastName, vkCareer, vkUniversity);
         }
         return null;
     }
