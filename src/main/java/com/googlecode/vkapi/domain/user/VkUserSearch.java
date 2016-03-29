@@ -10,12 +10,17 @@ public class VkUserSearch {
     private final String firstName;
     private final String lastName;
     private final List<VkCareer> career;
+    private final List<VkUniversity> university;
 
-    public VkUserSearch(int vkUserId, String firstName, String lastName, List<VkCareer> career) {
+
+
+    public VkUserSearch(int vkUserId, String firstName, String lastName, List<VkCareer> career, List<VkUniversity> university) {
         this.vkUserId = vkUserId;
         this.firstName = firstName;
         this.lastName = lastName;
+
         this.career = career;
+        this.university = university;
     }
 
     public List<VkCareer> getCareer() {
@@ -34,6 +39,8 @@ public class VkUserSearch {
         return vkUserId;
     }
 
-
+    public List<VkUniversity> getUniversity() {
+        return university;
+    }
 
 }

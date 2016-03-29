@@ -28,7 +28,7 @@ public class HttpVkApi implements VkApi, VkApiExtension {
 
     public static final String[] APP_SCOPES = { "friends", "wall", "groups" };
     public static final String[] USER_FIELDS = { "uid", "first_name", "last_name", "photo", "bdate" };
-    public static final String[] USER_CAREER = { "uid", "first_name", "last_name", "career" };
+    public static final String[] USER_CAREER = { "uid", "first_name", "last_name", "career", "universities" };
 
 
     private UriCreator uriCreator = new UriCreator();
@@ -184,7 +184,7 @@ public class HttpVkApi implements VkApi, VkApiExtension {
     }
 
     @Override
-    public Collection<VkUserSearch> getCareer(int universityId, OAuthToken authToken) throws InterruptedException {
+    public Collection<VkUserSearch> getUsers(int universityId, OAuthToken authToken) throws InterruptedException {
 
         Collection<VkUserSearch> list = new ArrayList<>();
 
@@ -200,7 +200,7 @@ public class HttpVkApi implements VkApi, VkApiExtension {
                         .add("university", String.valueOf(universityId));
 
                 String uri = uriCreator.userSearchUri(params, USER_CAREER, authToken);
-                String json = null;
+                String json;
                 try {
                     json = executeAndProcess(uri, authToken);
                 } catch (VkException e) {
@@ -225,6 +225,8 @@ public class HttpVkApi implements VkApi, VkApiExtension {
         }
         return list;
     }
+
+
 
     private void setCalendar() {
         calendar = new HashMap<>();
