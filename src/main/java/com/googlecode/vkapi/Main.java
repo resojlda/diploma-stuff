@@ -16,9 +16,11 @@ import java.util.HashMap;
 public class Main {
     public static void execute() throws InterruptedException, VkException {
         HttpVkApi api = new HttpVkApi("5301779", "ofLUbv8BcQbLAPgBaGG3", "https://oauth.vk.com/blank.html");
-        Collection<VkUserSearch> list = api.getCareer(5439, new VkOAuthToken("1eeece4f4538df5de5c3179467c5a05bb8de036931f539a750bd512278e733f404390c73809d357ee4fbf", 86400, 50306394));
+        Collection<VkUserSearch> list = api.getUsers(5439, new VkOAuthToken("51d231a5763ebc55ec7c6459ba5ce1d34a11d4045525a6aa2fdb2d2aef78722997d73a02b559842aa47ba", 86400, 50306394));
         VkDataAnalytics data = new VkCareerStatistics();
-        HashMap<String, Integer> result = data.workplaceStats(list);
+        //HashMap<String, Integer> result = data.workplaceStats(list);
+        //HashMap<String, Integer> result = data.employedStats(list);
+        HashMap<String, Integer> result = data.employmentPeriod(list);
         data.print(result);
     }
 }
