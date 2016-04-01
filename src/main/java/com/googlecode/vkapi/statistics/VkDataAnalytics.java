@@ -13,6 +13,10 @@ public interface VkDataAnalytics {
 
     HashMap<String, Integer> workplaceStats(Collection<VkUserSearch> list);
 
+    HashMap<String, Integer> employedStats(Collection<VkUserSearch> list);
+
+    HashMap<String, Integer> employmentPeriod(Collection<VkUserSearch> list);
+
     void print(HashMap<String, Integer> hashMap);
 
 }

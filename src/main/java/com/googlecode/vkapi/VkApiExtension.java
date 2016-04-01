@@ -12,7 +12,6 @@ import java.util.Collection;
  */
 public interface VkApiExtension {
 
-    Collection<VkUserSearch> getCareer(int universityId, OAuthToken authToken) throws VkException, InterruptedException;
-
+    Collection<VkUserSearch> getUsers(int universityId, OAuthToken authToken) throws VkException, InterruptedException;
 
 }
