@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 @RequestMapping("/")
@@ -55,6 +56,22 @@ public class RoutesController {
         return "univ";
     }
 
+    @RequestMapping(value = "/result", method = RequestMethod.POST)
+    public String result(@ModelAttribute("id")Integer id, Model model){
+        model.addAttribute("id", id);
+        return "result";
+    }
+    
+    @RequestMapping(value = "/charts")
+    public String charts(Model model) {
+        return "charts";
+    }
+
+    @RequestMapping(value = "/chart")
+    public String chart(Model model) {
+        return "chart";
+    }
+    
     @Autowired
     private CityService cityService;
     @Autowired
