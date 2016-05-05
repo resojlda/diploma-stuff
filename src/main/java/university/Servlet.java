@@ -81,14 +81,13 @@ public class Servlet extends HttpServlet {
         StringWriter content = new StringWriter();
         IOUtils.copy(getResponse(uriBuilder).getEntity().getContent(), content, "UTF-8");
         
-        String result = "";
         JSONParser parser = new JSONParser();
         JSONArray postsList = new JSONArray();
         
         try {
             JSONObject jsonResp = (JSONObject) parser.parse(content.toString());
             postsList = (JSONArray) jsonResp.get("response");
-            JSONObject obj = null;
+
             
             postsList.remove(0);
         } catch (ParseException e) {
