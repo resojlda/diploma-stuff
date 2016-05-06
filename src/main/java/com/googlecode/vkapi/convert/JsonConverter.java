@@ -16,6 +16,9 @@ import com.googlecode.vkapi.domain.group.VkGroup;
 import com.googlecode.vkapi.domain.message.VkWallMessage;
 import com.googlecode.vkapi.domain.user.GroupUsers;
 import com.googlecode.vkapi.domain.user.VkUser;
+import java.io.IOException;
+import university.City;
+import university.University;
 
 /**
  * Converts json responses from VK.com
@@ -45,7 +48,34 @@ public class JsonConverter {
 
         return result;
     }
-
+    
+     public ArrayList<City> getArray(String cityJson){
+        ArrayList<City> array = new ArrayList<>();
+        Iterator<JsonNode> elements = getRootResponseArray(cityJson);
+        JsonNode node;
+        while (elements.hasNext()){
+            node = elements.next();
+            City city = new City(node.get("cid").getValueAsInt(), 
+                            node.get("title").getValueAsText(), null);
+            array.add(city);
+        }
+        return array;
+    }
+     
+     public ArrayList<University> getArrayUniv(String json){
+        ArrayList<University> array = new ArrayList<>();
+        Iterator<JsonNode> elements = getRootResponseArray(json);
+        JsonNode node;
+        elements.next();
+        while (elements.hasNext()){
+            node = elements.next();
+            University univ = new University(node.get("id").getValueAsInt(),
+                                        node.get("title").getValueAsText());
+            array.add(univ);
+        }
+        return array;
+    }
+   
     public List<VkUserSearch> jsonToSearchList(String json) {
         logger.debug("jsonToSearchList: processing {}...", json);
 
@@ -75,6 +105,14 @@ public class JsonConverter {
     
     private JsonNode getRootResponse(String json) {
         return toJsonNode(json).get("response");
+    }
+    
+    public JsonNode getJson(String json){
+        return getRootResponse(json);
+    }
+    
+    public JsonNode toJson(String json) throws IOException{
+        return mapper.readTree(json);
     }
     
     private JsonNode toJsonNode(String json) {

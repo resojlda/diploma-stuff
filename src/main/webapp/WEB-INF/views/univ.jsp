@@ -208,6 +208,11 @@
         <br>
         <br>
         
-        <input type = "text" id = "t1">
+ <form action="result" method="post">
+            <input type = "text" id = "t1" name="id">
+            <br>
+            <br>
+            <input type = "submit" value="Отправить">
+     </form>
     </body>
 </html>
