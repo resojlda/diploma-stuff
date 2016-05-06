@@ -8,7 +8,6 @@ package mainpackage;
 import com.googlecode.vkapi.exceptions.VkException;
 import dbpackage.Company;
 import org.apache.commons.lang3.StringUtils;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import service.CityService;
 import service.CompanyService;
 import service.StudentService;
-import service.UniversityService;
-import university.Servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,6 +23,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import service.UniversityService;
+import university.CityAndUniversities;
 
 @Controller
 @RequestMapping("/")
@@ -50,12 +49,13 @@ public class RoutesController {
     }
 
     @RequestMapping(value = "/univ")
-    public String univ(Model model) throws IOException, org.json.simple.parser.ParseException {
-        JSONObject json = new Servlet().getResult();
+    public String univ(Model model) throws IOException{
+        //осторожно, говнокод!
+        String json = "{\"response\":" + CityAndUniversities.getCityJson().toString() + "}";
         model.addAttribute("json", json);
         return "univ";
     }
-
+    
     @RequestMapping(value = "/result", method = RequestMethod.POST)
     public String result(@ModelAttribute("id")Integer id, Model model){
         model.addAttribute("id", id);
