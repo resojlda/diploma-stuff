@@ -5,6 +5,8 @@
  */
 package mainpackage;
 
+import charts.Data;
+import charts.PieChartData;
 import com.googlecode.vkapi.exceptions.VkException;
 import dbpackage.Company;
 import org.apache.commons.lang3.StringUtils;
@@ -63,7 +65,15 @@ public class RoutesController {
     }
     
     @RequestMapping(value = "/charts")
-    public String charts(Model model) {
+    public String charts(Model model) throws IOException {
+        PieChartData pcd = new PieChartData();
+        pcd.addData(new Data("А", 50));
+        pcd.addData(new Data("B", 100));
+        pcd.addData(new Data("C", 150));
+        
+        String data = pcd.toJson().toString();
+        model.addAttribute("data", data);
+        
         return "charts";
     }
 

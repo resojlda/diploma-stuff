@@ -1,12 +1,5 @@
-
-<%--
-  Created by IntelliJ IDEA.
-  User: Den
-  Date: 23.03.2016
-  Time: 17:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <title>Chart</title>
@@ -30,21 +23,27 @@ function drawBarChart(data, options, element){
   chart.draw(google.visualization.arrayToDataTable(data), options);
 }
 
+    
   
     function load() {
+        
+      var json = <c:out value = "${requestScope.data}" escapeXml="false" />;
 
-      var arr = [
-      ['Название', 'Количество'],
-      ['Работают',     3236],
-      ['Не работают',  2556]
-      ];
+      console.log(json);
+      var arr = [['Название', 'Значение']];
+
+
+      for (var i = 0; i < json.length; i++){
+        arr.push([json[i].title, json[i].value]);
+    }
+  
 
       var data = [
-         ['Элемент', 'Значение', { role: 'style' }, { role: 'annotation' } ],
-         ['Элемент 1', 10, 'yellow', 'Э1' ],
-         ['Элемент 1', 200, 'green', 'Э2' ],
-         ['Элемент 1', 700, 'blue', 'Э3' ],
-         ['Элемент 1', 40, 'red', 'Э4' ]
+         ['Элемент', 'Значение'],
+         ['Элемент 1', 10],
+         ['Элемент 1', 200],
+         ['Элемент 1', 700],
+         ['Элемент 1', 40]
       ];
 
         var options2 = {
@@ -62,9 +61,9 @@ function drawBarChart(data, options, element){
       var element = document.getElementById('piechart');
       var element2 = document.getElementById('div2');
 
-      google.charts.setOnLoadCallback(function(){return drawPieChart(data, options, element);});
-      google.charts.setOnLoadCallback(function(){return drawColumnChart(data, options2, div2);});
-      google.charts.setOnLoadCallback(function(){return drawBarChart(data, options2, div3);});
+      google.charts.setOnLoadCallback(function(){return drawPieChart(arr, options, element);});
+      google.charts.setOnLoadCallback(function(){return drawColumnChart(arr, options2, div2);});
+      google.charts.setOnLoadCallback(function(){return drawBarChart(arr, options2, div3);});
     }
   </script>
 </head>
