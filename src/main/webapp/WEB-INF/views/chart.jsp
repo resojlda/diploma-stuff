@@ -1,16 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Den
-  Date: 23.03.2016
-  Time: 17:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
     <title>Chart</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script defer type="text/javascript" src="js/chart.js"></script>
+    <spring:url value="/resources/js/chart.js" var="chart" />
+    <script src="${chart}"></script>
+
     <script type="text/javascript">
         // google.charts.load('current', {'packages':['corechart']});
         // google.charts.setOnLoadCallback(drawChart);
@@ -36,12 +32,14 @@
          var arr = [
          ['Название', 'Количество'],
          ['Работают',     3236],
-         ['Не работают',  2556]
+         ['Не работают',  2556],
+         ['Не',  2556]
          ];
 
          var options = {
           title: 'Работающие/Не Работающие'
         };
+
         var element = document.getElementById('piechart');
         google.charts.setOnLoadCallback(function(){return drawPieChart(arr, options, element);});
       }
