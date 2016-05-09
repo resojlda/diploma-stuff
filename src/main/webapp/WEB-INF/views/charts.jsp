@@ -5,7 +5,11 @@
   <title>Chart</title>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <!--   <script defer type="text/javascript" src="chart.js"></script> -->
+    <spring:url value="/resources/js/chart.js" var="chart" />
+    <script src="${chart}"></script>
   <script>
+
+
 google.charts.load('current', {'packages':['corechart']});
 
 function drawPieChart(data, options, element) {
@@ -29,9 +33,7 @@ function drawBarChart(data, options, element){
         
       var json = <c:out value = "${requestScope.data}" escapeXml="false" />;
 
-      console.log(json);
       var arr = [['Название', 'Значение']];
-
 
       for (var i = 0; i < json.length; i++){
         arr.push([json[i].title, json[i].value]);

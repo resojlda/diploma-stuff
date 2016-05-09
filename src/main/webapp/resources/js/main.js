@@ -1,1 +1,1 @@
-console.log("JavaScript работает. А Серёжа - котик!")
+console.log("JavaScript работает. А Серёжа - котик!");
