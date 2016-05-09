@@ -1,16 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Den
-  Date: 23.03.2016
-  Time: 17:02
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Chart</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script defer type="text/javascript" src="js/chart.js"></script>
+    <!-- <script src="diploma-stuff/resources/js/chart.js" type="text/javascript"></script> -->
+    <spring:url value="/resources/js/chart.js" var="chart" />
+    <script src="${chart}"></script>
+
     <script type="text/javascript">
         // google.charts.load('current', {'packages':['corechart']});
         // google.charts.setOnLoadCallback(drawChart);
@@ -42,6 +39,7 @@
          var options = {
           title: 'Работающие/Не Работающие'
         };
+
         var element = document.getElementById('piechart');
         google.charts.setOnLoadCallback(function(){return drawPieChart(arr, options, element);});
       }
