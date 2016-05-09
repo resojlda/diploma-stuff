@@ -7,7 +7,7 @@
 
        <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
        <mvc:annotation-driven />
-       <context:component-scan base-package="mainpackage" />
+       <context:component-scan base-package="com.usp" />
        <bean id="viewResolver"
              class="org.springframework.web.servlet.view.InternalResourceViewResolver">
               <property name="viewClass"
@@ -27,7 +27,7 @@
 
     <bean id="sesionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="dbpackage"/>
+        <property name="packagesToScan" value="com.usp.dbpackage"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</prop>
@@ -45,18 +45,27 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <bean id="cityDao" class="dao.CityDaoImpl"/>
-    <bean id="cityService" class="service.CityServiceImpl"/>
+    <bean id="cityDao" class="com.usp.dao.CityDaoImpl"/>
+    <bean id="cityService" class="com.usp.service.CityServiceImpl"/>
 
 
-    <bean id="studentDao" class="dao.StudentDaoImpl"/>
-    <bean id="studentService" class="service.StudentServiceImpl"/>
+    <bean id="studentDao" class="com.usp.dao.StudentDaoImpl"/>
+    <bean id="studentService" class="com.usp.service.StudentServiceImpl"/>
 
-    <bean id="universityDao" class="dao.UniversityDaoImpl"/>
-    <bean id="universityService" class="service.UniversityServiceImpl"/>
+    <bean id="universityDao" class="com.usp.dao.UniversityDaoImpl"/>
+    <bean id="universityService" class="com.usp.service.UniversityServiceImpl"/>
 
-    <bean id="companyDao" class="dao.CompanyDaoImpl"/>
-    <bean id="companyService" class="service.CompanyServiceImpl"/>
+    <bean id="companyDao" class="com.usp.dao.CompanyDaoImpl"/>
+    <bean id="companyService" class="com.usp.service.CompanyServiceImpl"/>
 
+    <bean name="vkApi" class="com.googlecode.vkapi.HttpVkApi">
+        <constructor-arg index="0" value="5301779" />
+        <constructor-arg index="1" value="ofLUbv8BcQbLAPgBaGG3" />
+        <constructor-arg index="2" value="https://oauth.vk.com/blank.html" />
+    </bean>
+
+    <bean name="httpVkApi" class="com.usp.http.HttpVkApi" parent="vkApi">
+
+    </bean>
 
 </beans>
