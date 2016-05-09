@@ -1,74 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65b08143-d2ef-4ce5-a3ef-e03b3cad5f44" name="Default" comment="methods fixed">
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\artifacts\diploma_stuff_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\artifacts\diploma_stuff_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\dataSources.ids" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\dataSources.local.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\dataSources.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\diploma-stuff.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Hibernate_4_2_2_4_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__antlr_antlr_2_7_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__commons_codec_commons_codec_1_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__commons_dbcp_commons_dbcp_1_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__commons_io_commons_io_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__commons_pool_commons_pool_1_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__javax_javaee_web_api_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__javax_servlet_jsp_jsp_api_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__javax_servlet_jsp_jstl_javax_servlet_jsp_jstl_api_1_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__javax_servlet_jsp_jstl_jstl_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__javax_servlet_servlet_api_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__junit_junit_4_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_apache_commons_commons_lang3_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_aspectj_aspectjweaver_1_7_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_codehaus_jackson_jackson_core_asl_1_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_codehaus_jackson_jackson_mapper_asl_1_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_glassfish_web_javax_servlet_jsp_jstl_1_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_hamcrest_hamcrest_core_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_hibernate_common_hibernate_commons_annotations_4_0_2_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_hibernate_hibernate_core_4_2_2_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_javassist_javassist_3_15_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_jboss_logging_jboss_logging_3_1_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_1_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_slf4j_slf4j_api_1_7_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_slf4j_slf4j_simple_1_7_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_aop_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_aspects_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_beans_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_context_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_context_support_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_core_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_expression_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_instrument_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_jdbc_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_jms_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_messaging_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_orm_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_oxm_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_test_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_tx_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_web_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_webmvc_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_webmvc_portlet_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__org_springframework_spring_websocket_4_0_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\libraries\Maven__postgresql_postgresql_9_1_901_1_jdbc4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\webContexts.xml" afterPath="" />
+    <list default="true" id="65b08143-d2ef-4ce5-a3ef-e03b3cad5f44" name="Default" comment="">
       <change type="DELETED" beforePath="C:\Users\Aleksandra Marysheva\Documents\diploma\diploma-stuff\.idea\workspace.xml" afterPath="" />
     </list>
     <ignored path="diploma-stuff.iws" />
@@ -781,7 +714,7 @@
       <workItem from="1458476414040" duration="1410000" />
       <workItem from="1458500699630" duration="4327000" />
       <workItem from="1462825780018" duration="792000" />
-      <workItem from="1462826597362" duration="1920000" />
+      <workItem from="1462826597362" duration="2024000" />
     </task>
     <task id="LOCAL-00001" summary="methods fixed">
       <created>1458503282158</created>
@@ -795,11 +728,17 @@
       <option name="project" value="LOCAL" />
       <updated>1462828424698</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="delete">
+      <created>1462828561786</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1462828561786</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15878000" />
+    <option name="totallyTimeSpent" value="15982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -829,7 +768,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27760968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.4969743" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -885,7 +824,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="methods fixed" />
     <MESSAGE value="new packages structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="new packages structure" />
+    <MESSAGE value="delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
