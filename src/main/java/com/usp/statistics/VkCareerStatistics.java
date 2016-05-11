@@ -2,6 +2,7 @@ package com.usp.statistics;
 
 
 import com.googlecode.vkapi.domain.OAuthToken;
+import com.googlecode.vkapi.exceptions.VkException;
 import com.usp.domain.user.VkUserSearch;
 import com.usp.http.HttpVkApi;
 
@@ -23,7 +24,7 @@ public class VkCareerStatistics implements VkDataAnalytics {
     }
 
     @Override
-    public HashMap<String, Integer> workplaceStats(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    public HashMap<String, Integer> workplaceStats(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, VkException {
 
         Collection<VkUserSearch> list = api.getUsers(universityId, authToken);
 
@@ -48,7 +49,7 @@ public class VkCareerStatistics implements VkDataAnalytics {
     }
 
     @Override
-    public HashMap<String, Integer> employedStats(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    public HashMap<String, Integer> employedStats(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, VkException {
 
         Collection<VkUserSearch> list = api.getUsers(universityId, authToken);
 
@@ -78,7 +79,7 @@ public class VkCareerStatistics implements VkDataAnalytics {
     }
 
     @Override
-    public HashMap<String, Integer> employmentPeriod(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    public HashMap<String, Integer> employmentPeriod(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, VkException {
 
         Collection<VkUserSearch> list = api.getUsers(5439, authToken);
 

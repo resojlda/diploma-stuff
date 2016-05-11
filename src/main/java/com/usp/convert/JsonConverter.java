@@ -17,12 +17,10 @@ import java.util.List;
  */
 public class JsonConverter extends com.googlecode.vkapi.convert.JsonConverter{
 
-    private com.googlecode.vkapi.convert.JsonConverter jsonConverter;
     private Logger logger = LoggerFactory.getLogger(JsonConverter.class);
     public static final JsonConverter INSTANCE = new JsonConverter();
 
     public JsonConverter() {
-        jsonConverter = com.googlecode.vkapi.convert.JsonConverter.INSTANCE;
     }
 
     @SuppressWarnings("unchecked")
@@ -30,11 +28,13 @@ public class JsonConverter extends com.googlecode.vkapi.convert.JsonConverter{
 
         logger.debug("jsonToSearchList: processing {}...", json);
 
-        Method m = jsonConverter.getClass().getDeclaredMethod("getRootResponseArray", String.class);
+        //invoking private method via reflection
+        Method m = super.INSTANCE.getClass().getDeclaredMethod("getRootResponseArray", String.class);
         m.setAccessible(true);
-        Iterator<JsonNode> elements = (Iterator<JsonNode>) m.invoke(INSTANCE, new Object[] {json});
+        Iterator<JsonNode> elements = (Iterator<JsonNode>) m.invoke(super.INSTANCE, new Object[] {json});
 
         List<VkUserSearch> result = new ArrayList<>();
+
         while (elements.hasNext()) {
             VkUserSearch user = Convert.toVkUserSearch(elements.next());
             if (user != null) {
@@ -48,5 +48,12 @@ public class JsonConverter extends com.googlecode.vkapi.convert.JsonConverter{
         logger.debug("jsonToVkError: processing {}...", json);
         VkErrorResponse vkError = new VkErrorResponse(112, message);
         return vkError;
+    }
+
+    public boolean isArray(String json) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        Method m = super.INSTANCE.getClass().getDeclaredMethod("getRootResponse", String.class);
+        m.setAccessible(true);
+        JsonNode jsonNode = (JsonNode) m.invoke(super.INSTANCE, new Object[] {json});
+        return jsonNode.isArray() && jsonNode.size() > 1;
     }
 }
