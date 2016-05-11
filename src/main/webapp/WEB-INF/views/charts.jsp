@@ -1,31 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
   <title>Chart</title>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<!--   <script defer type="text/javascript" src="chart.js"></script> -->
     <spring:url value="/resources/js/chart.js" var="chart" />
     <script src="${chart}"></script>
   <script>
-
-
-google.charts.load('current', {'packages':['corechart']});
-
-function drawPieChart(data, options, element) {
-    var chart = new google.visualization.PieChart(element);
-    chart.draw(google.visualization.arrayToDataTable(data), options);
-}
-
-function drawColumnChart(data, options, element){
-  var chart = new google.visualization.ColumnChart(element);
-  chart.draw(google.visualization.arrayToDataTable(data), options);
-}
-
-function drawBarChart(data, options, element){
-  var chart = new google.visualization.BarChart(element);
-  chart.draw(google.visualization.arrayToDataTable(data), options);
-}
+//google.charts.load('current', {'packages':['corechart']});
+//function drawPieChart(data, options, element) {
+//    var chart = new google.visualization.PieChart(element);
+//    chart.draw(google.visualization.arrayToDataTable(data), options);
+//}
+//function drawColumnChart(data, options, element){
+//  var chart = new google.visualization.ColumnChart(element);
+//  chart.draw(google.visualization.arrayToDataTable(data), options);
+//}
+//function drawBarChart(data, options, element){
+//  var chart = new google.visualization.BarChart(element);
+//  chart.draw(google.visualization.arrayToDataTable(data), options);
+//}
 
     
   

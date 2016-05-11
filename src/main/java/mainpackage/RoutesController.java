@@ -77,9 +77,9 @@ public class RoutesController {
         return "charts";
     }
 
-    @RequestMapping(value = "/chart")
+    @RequestMapping(value = "/percent")
     public String chart(Model model) {
-        return "chart";
+        return "percent";
     }
     
     @Autowired
