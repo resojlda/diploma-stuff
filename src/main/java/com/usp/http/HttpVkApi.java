@@ -1,6 +1,9 @@
 package com.usp.http;
 
 import com.googlecode.vkapi.domain.OAuthToken;
+import com.googlecode.vkapi.domain.error.VkErrorResponse;
+import com.googlecode.vkapi.exceptions.VkException;
+import com.googlecode.vkapi.exceptions.VkExceptions;
 import com.usp.convert.JsonConverter;
 import com.usp.domain.user.VkUserSearch;
 
@@ -15,21 +18,24 @@ import java.util.HashMap;
  */
 public class HttpVkApi  extends com.googlecode.vkapi.HttpVkApi{
 
-    public static final String[] USER_CAREER = { "uid", "first_name", "last_name", "career", "universities" };
+    public static final String[] USER_CAREER = { "uid", "first_name", "last_name", "career", "universities" };  //response career params
     private UriCreator uriCreator = new UriCreator();
-    private HashMap<Integer, Integer> calendar;
+    private JsonConverter jsonConverter;
 
-    private JsonConverter jsonConverter = new JsonConverter();
+    private HashMap<Integer, Integer> calendar; //calendar data to divide request
 
     public HttpVkApi(String appId, String appKey, String responseUri) {
         super(appId, appKey, responseUri);
+        jsonConverter = JsonConverter.INSTANCE;
     }
 
-    public Collection<VkUserSearch> getUsers(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    //getting a list of users for the university
+    public Collection<VkUserSearch> getUsers(int universityId, OAuthToken authToken) throws InterruptedException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, VkException {
 
         Collection<VkUserSearch> list = new ArrayList<>();
-
         if (calendar == null) setCalendar();
+
+        String json; //response from vk
 
         for (int i = 1; i <= calendar.size() ; i++) {
             for (int j = 1; j <= calendar.get(i) ; j++) {
@@ -41,11 +47,9 @@ public class HttpVkApi  extends com.googlecode.vkapi.HttpVkApi{
                         .add("com/usp/university", String.valueOf(universityId));
 
                 String uri = uriCreator.userSearchUri(params, USER_CAREER, authToken);
-                String json;
+
                 try {
-                    Method m = getClass().getSuperclass().getDeclaredMethod("executeAndProcess", new Class[]{String.class, OAuthToken.class});
-                    m.setAccessible(true);
-                    json = (String) m.invoke(this, new Object[] {uri, authToken});
+                    json = executeAndProcess(uri, authToken);
 
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
@@ -57,11 +61,11 @@ public class HttpVkApi  extends com.googlecode.vkapi.HttpVkApi{
                 System.out.println("i, j = " + i + ", " + j + " " + json);
                 list.addAll(jsonConverter.jsonToSearchList(json));
 
-                //Delay. 3 requests for second
+                //Delay. 3 requests per second
                 if ((j%3) == 0) {
                     Thread.sleep(1000);
                 }
-
+                //Pause to avoid empty response
                 if ((j%29) == 0) {
                     Thread.sleep(60000);
                 }
@@ -70,7 +74,17 @@ public class HttpVkApi  extends com.googlecode.vkapi.HttpVkApi{
         return list;
     }
 
-
+    private String executeAndProcess(String uri, OAuthToken authToken) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, VkException {
+        //invoking private method via reflection
+        Method m = getClass().getSuperclass().getDeclaredMethod("executeAndProcess", new Class[]{String.class, OAuthToken.class});
+        m.setAccessible(true);
+        String json = (String) m.invoke(this, new Object[] {uri, authToken});
+        if (!jsonConverter.isArray(json)) {
+            VkErrorResponse error = jsonConverter.jsonToVkError(json, "Empty response");
+            VkExceptions.throwAppropriate(error, authToken);
+        }
+        return json;
+    }
 
     private void setCalendar() {
         calendar = new HashMap<>();

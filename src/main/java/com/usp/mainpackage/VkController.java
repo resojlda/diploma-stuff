@@ -55,10 +55,10 @@ import java.util.HashMap;
         }
 
         @RequestMapping(value = "/stats", method = RequestMethod.GET)
-        public String stats() throws InterruptedException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        public String stats() throws InterruptedException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, VkException {
             HttpVkApi api = new HttpVkApi("5301779", "ofLUbv8BcQbLAPgBaGG3", "https://oauth.vk.com/blank.html");
             VkDataAnalytics st = new VkCareerStatistics(api);
-            HashMap<String, Integer> hashMap = st.employedStats(5439, new VkOAuthToken("aa26341e03ccbf4709deab1c0e2f912987fc96b7d962cb12d2f559ce3e48e3df5a25da4edd1da7de6ef74", 86400, 50306394));
+            HashMap<String, Integer> hashMap = st.employedStats(5439, new VkOAuthToken("a1f89b71a3210c9f00204148d21be5db65652bfbd85eab1bb4ea18fcb9f3529b5c5cd2b3bd3c488636632", 86400, 50306394));
             st.print(hashMap);
         return "stats";
     }
